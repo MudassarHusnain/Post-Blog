@@ -1,0 +1,42 @@
+<h1 style="margin-left: 600px;padding-bottom: 100px;">All Posts</h1>
+
+<table class="table" style="height: auto;width: 70%;margin-left: 200px">
+  <thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody >
+  <% @posts.each do |post| %>
+        <tr>
+          <td style=""><button type="button" class="btn btn-secondary me-5"><%=link_to post.title,post_path(post),:style => 'text-decoration: none;color: white;font-size:30px;text-transform:uppercase;' %></button></td>
+           <td><!-- Example split danger button -->
+             <button type="button" class="btn btn-secondary"><%= link_to "Destroy", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },:style => 'text-decoration:none;color:white' %></button>
+             <button type="button" class="btn btn-secondary ms-5"><%= link_to "Update",edit_post_path(post) ,:style => 'text-decoration:none;color:white' %></button>
+
+           </td>
+        </tr>
+      </a>
+  <% end %>
+  </tbody>
+</table>
+<%# @posts.each do |post| %>
+  <%# if current_user.id == post.user_id %>
+<!--      <h1><%#= link_to post.title, post_path(post) %></h1>-->
+<!--      <p><%#= post.description %></p>-->
+<!--    <div class="list-group">-->
+<!--      <a href="#" class="list-group-item list-group-item-action active" aria-current="true">-->
+<!--        The current link item-->
+<!--      </a>-->
+<!--      <a href="post_comment" class="list-group-item list-group-item-action">A second link item</a>-->
+<!--      <a href="#" class="list-group-item list-group-item-action">A third link item</a>-->
+<!--      <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>-->
+<!--      <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a>-->
+<!--      <h1 class="list-group-item list-group-item-action bg-secondary" style="text-align: center;" ><%#= link_to post.title, post_path(post),:style => 'text-transform: uppercase;color:black;text-decoration:none;' %></h1>-->
+<!--      <p class="list-group-item list-group-item-action " aria-current="true">Content of Post: <%#= post.description %></p>-->
+<!--    </div>-->
+
+  <%# end %>
+<%#end %>
+

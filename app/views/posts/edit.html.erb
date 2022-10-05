@@ -1,0 +1,33 @@
+<div class="border border-light p-3 mb-4">
+  <h2 class="d-flex align-items-center justify-content-center" style="height: 100px">Add the post</h2>
+  <br>
+  <div class="d-flex align-items-center justify-content-center" style="height: 200px">
+    <%= form_with model: @post do |form| %>
+      <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% @post.errors.full_messages_for(:title).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+
+      <div>
+        <%= form.label :description %><br>
+        <%= form.text_area :description %><br>
+        <% @post.errors.full_messages_for(:body).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+      <!--  <div>-->
+      <!--    <%#= form.label :user_id %><br>-->
+      <!--    <%#= form.number_field :user_id ,value:current_user.id %><br>-->
+      <%# @post.errors.full_messages_for(:body).each do |message| %>
+      <!--      <div><%#= message %></div>-->
+      <%# end %>
+      <!--  </div>-->
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

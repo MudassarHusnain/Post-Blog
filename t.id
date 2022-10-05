@@ -1,0 +1,19 @@
+
+[1mFrom:[0m /home/mudassarhusnain/rails/userLoginWithDevise/app/controllers/comments_controller.rb:25 CommentsController#create:
+
+    [1;34m24[0m: [32mdef[0m [1;34mcreate[0m
+ => [1;34m25[0m:   binding.pry
+    [1;34m26[0m:   @post=[1;34;4mPost[0m.find(params[[33m:post_id[0m])
+    [1;34m27[0m:   @comment = [1;34;4mComment[0m.new(comment_params)
+    [1;34m28[0m:   [1;34m# @comment.post = Post.find(params[:id])[0m
+    [1;34m29[0m:   respond_to [32mdo[0m |format|
+    [1;34m30[0m:     [32mif[0m @comment.save
+    [1;34m31[0m:       format.html { redirect_to comment_url(@comment), [35mnotice[0m: [31m[1;31m"[0m[31mComment was successfully created.[1;31m"[0m[31m[0m }
+    [1;34m32[0m:       format.json { render [33m:show[0m, [35mstatus[0m: [33m:created[0m, [35mlocation[0m: @comment }
+    [1;34m33[0m:     [32melse[0m
+    [1;34m34[0m:       format.html { render [33m:new[0m, [35mstatus[0m: [33m:unprocessable_entity[0m }
+    [1;34m35[0m:       format.json { render [35mjson[0m: @comment.errors, [35mstatus[0m: [33m:unprocessable_entity[0m }
+    [1;34m36[0m:     [32mend[0m
+    [1;34m37[0m:   [32mend[0m
+    [1;34m38[0m: [32mend[0m
+

@@ -1,0 +1,39 @@
+<div class="border border-light p-3 mb-4">
+  <div class="d-flex align-items-center justify-content-center" style="height: 200px">
+
+<%= form_with(model: [@post,comment]) do |form| %>
+  <% if comment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-12">
+        <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+          <div class="card-body p-4">
+            <div class="form-outline mb-4" style="width: 1000px">
+
+              <%= form.label :context, style: "display: block"%>
+              <%= form.text_area :context, class:"form-control" %>
+              <div style="padding-top: 30px;padding-left: 40%">
+                <%= form.submit%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<% end %>
+  </div>
+</div>

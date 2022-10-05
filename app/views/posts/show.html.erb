@@ -1,0 +1,18 @@
+<h1>Details</h1>
+
+<div class="list-group">
+  <!--      <a href="#" class="list-group-item list-group-item-action active" aria-current="true">-->
+  <!--        The current link item-->
+  <!--      </a>-->
+  <!--      <a href="post_comment" class="list-group-item list-group-item-action">A second link item</a>-->
+  <!--      <a href="#" class="list-group-item list-group-item-action">A third link item</a>-->
+  <!--      <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>-->
+  <!--      <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a>-->
+  <h1 class="list-group-item list-group-item-action bg-secondary" style="text-transform: uppercase;text-align: center"><%= @post.title %></h1>
+  <p class="list-group-item list-group-item-action " aria-current="true"><b>Content of Post : </b><%= @post.description %></p>
+</div>
+<%=  render "comments/form",comment:@comment %>
+<%= render 'comments/comment', obj: @post.comments %>
+
+
+
